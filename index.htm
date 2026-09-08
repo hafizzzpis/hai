@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>NGERJAIN ANAK MONYET</title>
+
+<style>
+
+/* =================================================
+   DASAR 5862f2b4c0087ffe68f8ee88de37dbb797a92702
+================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =================================================
+   HALAMAN 1
+================================================= */
+
+#page1 {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9eb5,
+            #ff5c7c
+        );
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+
+/* =================================================
+   CARD
+================================================= */
+
+.card {
+
+    width: 90%;
+    max-width: 400px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.25);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.2);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+/* =================================================
+   GAMBAR
+================================================= */
+
+.main-image {
+
+    width: 180px;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 4px solid white;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.25);
+}
+
+
+/* =================================================
+   PERTANYAAN
+================================================= */
+
+.question {
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 30px;
+}
+
+
+/* =================================================
+   AREA TOMBOL
+================================================= */
+
+.button-area {
+
+    position: relative;
+
+    width: 260px;
+
+    height: 70px;
+
+    margin: auto;
+}
+
+
+/* =================================================
+   TOMBOL
+================================================= */
+
+.btn {
+
+    position: absolute;
+
+    top: 10px;
+
+    padding:
+        13px 25px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+/* =================================================
+   YES
+================================================= */
+
+#yes {
+
+    left: 20px;
+
+    background:
+        #00c853;
+
+    box-shadow:
+        0 6px 15px
+        rgba(0,200,83,.4);
+}
+
+
+/* =================================================
+   NO
+================================================= */
+
+#no {
+
+    left: 150px;
+
+    background:
+        #ff1744;
+
+    box-shadow:
+        0 6px 15px
+        rgba(255,23,68,.4);
+
+    transition:
+        left .2s ease,
+        top .2s ease;
+}
+
+
+
+.hint {
+
+    margin-top: 15px;
+
+    color:
+        rgba(255,255,255,.85);
+
+    font-size: 12px;
+}
+
+
+/* =================================================
+   HALAMAN 2
+================================================= */
+
+#page2 {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #17233b,
+            #050914
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease;
+
+    overflow: hidden;
+}
+
+
+/* =================================================
+   HASIL
+================================================= */
+
+.result {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    animation:
+        showResult 1s ease;
+}
+
+
+@keyframes showResult {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.6)
+            translateY(50px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+
+.result img {
+
+    width:
+        min(75vw, 330px);
+
+    height:
+        min(75vw, 330px);
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    border: 4px solid white;
+
+    box-shadow:
+
+        0 0 30px
+        rgba(255,60,120,.6),
+
+        0 20px 50px
+        rgba(0,0,0,.5);
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}
+
+
+/* =================================================
+   GOOD BOY
+================================================= */
+
+.goodboy {
+
+    margin-top: 25px;
+
+    color: white;
+
+    font-size:
+        clamp(
+            40px,
+            10vw,
+            70px
+        );
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+
+        0 0 5px white,
+
+        0 0 15px #ff4d88,
+
+        0 0 30px #ff145f,
+
+        0 0 60px #ff145f;
+
+    animation:
+        glowText 1s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes glowText {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+
+/* =================================================
+   🍌 CONTAINER PISANG
+================================================= */
+
+#banana-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+
+/* =================================================
+   🍌 PISANG
+================================================= */
+
+.banana {
+
+    position: absolute;
+
+    top: -100px;
+
+    animation:
+        fall linear forwards;
+
+    user-select: none;
+}
+
+
+/* =================================================
+   🍌 ANIMASI JATUH
+================================================= */
+
+@keyframes fall {
+
+    0% {
+
+        transform:
+            translateY(-100px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+
+        opacity: 1;
+    }
+
+    50% {
+
+        transform:
+            translateY(55vh)
+            rotate(180deg);
+    }
+
+    100% {
+
+        transform:
+            translateY(115vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =================================================
+   HP
+================================================= */
+
+@media(max-width:500px) {
+
+    .card {
+
+        padding: 25px 15px;
+    }
+
+    .main-image {
+
+        width: 160px;
+
+        height: 160px;
+    }
+
+    .question {
+
+        font-size: 19px;
+    }
+
+    .button-area {
+
+        width: 250px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+
+<div id="page1">
+
+    <div class="card">
+
+
+        
+
+        <img
+            class="main-image"
+            src="WhatsApp Image 2026-09-07 at 02.29.49.jpeg"
+            alt="Foto"
+        >
+
+
+        <div class="question">
+
+            Kamu mau menerima hadiah? 
+
+        </div>
+
+
+        <div
+            class="button-area"
+            id="buttonArea">
+
+
+            <!-- YES -->
+
+            <button
+                class="btn"
+                id="yes">
+
+                YES 
+
+            </button>
+
+
+            <!-- NO -->
+
+            <button
+                class="btn"
+                id="no">
+
+                NO 
+
+            </button>
+
+
+        </div>
+
+
+        <div class="hint">
+
+            Coba dongg
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     HALAMAN HASIL
+================================================= -->
+
+<div id="page2">
+
+
+    <!--
+    Semua pisang akan muncul di sini
+    -->
+
+    <div id="banana-container"></div>
+
+
+    <div class="result">
+
+
+        <!--
+        GANTI FOTO HASIL DI SINI
+
+       <! -->
+
+        <img
+            src="gorila meme.jpg"
+            alt="Surprise"
+        >
+
+
+        <div class="goodboy nyett">
+
+            PRANKKKK nyett 🤪
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =================================================
+   ELEMENT
+================================================= */
+
+const page1 =
+    document.getElementById(
+        "page1"
+    );
+
+const page2 =
+    document.getElementById(
+        "page2"
+    );
+
+const yes =
+    document.getElementById(
+        "yes"
+    );
+
+const no =
+    document.getElementById(
+        "no"
+    );
+
+const buttonArea =
+    document.getElementById(
+        "buttonArea"
+    );
+
+const bananaContainer =
+    document.getElementById(
+        "banana-container"
+    );
+
+
+/* =================================================
+   YES
+================================================= */
+
+yes.onclick = function() {
+
+    /*
+       Hilangkan halaman pertama
+    */
+
+    page1.style.opacity = "0";
+
+    page1.style.transform =
+        "scale(1.1)";
+
+
+    /*
+       Tunggu animasi
+    */
+
+    setTimeout(function() {
+
+        page1.style.display =
+            "none";
+
+
+        /*
+           Tampilkan halaman kedua
+        */
+
+        page2.style.opacity =
+            "1";
+
+        page2.style.pointerEvents =
+            "auto";
+
+
+        /*
+           Mulai hujan pisang
+        */
+
+        startBananas();
+
+    }, 800);
+
+};
+
+
+/* =================================================
+   FUNGSI PINDAHKAN NO
+================================================= */
+
+function moveNo() {
+
+    /*
+       Ukuran area
+    */
+
+    const areaWidth =
+        buttonArea.clientWidth;
+
+    const areaHeight =
+        buttonArea.clientHeight;
+
+
+    /*
+       Ukuran tombol
+    */
+
+    const noWidth =
+        no.offsetWidth;
+
+    const noHeight =
+        no.offsetHeight;
+
+
+    /*
+       Batas gerakan
+    */
+
+    const maxLeft =
+        areaWidth - noWidth;
+
+    const maxTop =
+        areaHeight - noHeight;
+
+
+    /*
+       Posisi acak
+    */
+
+    const left =
+        Math.random() *
+        Math.max(
+            0,
+            maxLeft
+        );
+
+
+    const top =
+        Math.random() *
+        Math.max(
+            0,
+            maxTop
+        );
+
+
+    /*
+       Pindahkan
+    */
+
+    no.style.left =
+        left + "px";
+
+    no.style.top =
+        top + "px";
+
+}
+
+
+/* =================================================
+   DESKTOP
+================================================= */
+
+no.addEventListener(
+    "mouseenter",
+    moveNo
+);
+
+
+/* =================================================
+   HP
+================================================= */
+
+no.addEventListener(
+    "touchstart",
+    function(event) {
+
+        event.preventDefault();
+
+        moveNo();
+
+    },
+    {
+        passive: false
+    }
+);
+
+
+/* =================================================
+   KLIK
+================================================= */
+
+no.onclick = function(event) {
+
+    event.preventDefault();
+
+    moveNo();
+
+};
+
+
+/* =================================================
+   🍌 MEMBUAT PISANG
+================================================= */
+
+function createBanana() {
+
+    const banana =
+        document.createElement(
+            "div"
+        );
+
+
+    /*
+       Emoji pisang
+    */
+
+    banana.innerHTML =
+        "🤪";
+
+
+    banana.className =
+        "banana";
+
+
+    /*
+       Posisi random
+    */
+
+    banana.style.left =
+        Math.random() *
+        200 +
+        "vw";
+
+
+    /*
+       Ukuran random
+    */
+
+    const size =
+        Math.random() *
+        35 +
+        25;
+
+
+    banana.style.fontSize =
+        size + "px";
+
+
+    /*
+       Kecepatan random
+    */
+
+    const duration =
+        Math.random() *
+        3 +
+        3;
+
+
+    banana.style.animationDuration =
+        duration + "s";
+
+
+    /*
+       Masukkan ke halaman
+    */
+
+    bananaContainer.appendChild(
+        banana
+    );
+
+
+    /*
+       Hapus setelah selesai
+    */
+
+    setTimeout(
+        function() {
+
+            banana.remove();
+
+        },
+        (duration + 1) * 1000
+    );
+
+}
+
+
+/* =================================================
+   🍌 MULAI HUJAN PISANG
+================================================= */
+
+function startBananas() {
+
+
+    /*
+       Buat 50 pisang
+       saat pertama muncul
+    */
+
+    for(
+        let i = 0;
+        i < 35;
+        i++
+    ) {
+
+        setTimeout(
+            createBanana,
+            i * 150
+        );
+
+    }
+
+
+    /*
+       Lanjutkan hujan pisang
+    */
+
+    setInterval(
+        createBanana,
+        250
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>
